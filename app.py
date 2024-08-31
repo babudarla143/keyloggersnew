@@ -88,5 +88,3 @@ def monitor_keys():
 
     return '', 204  # No Content response
 
-if __name__ == '__main__':
-    serve(app, host='0.0.0.0', port=5143)  # Use Waitress to serve the app

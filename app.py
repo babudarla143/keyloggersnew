@@ -2,6 +2,7 @@ import threading  # Standard library import
 
 from flask import Flask, render_template  # Third-party imports
 from pynput import keyboard  # Third-party imports
+from waitress import serve  # Third-party import for serving the app
 
 app = Flask(__name__)
 
@@ -88,4 +89,4 @@ def monitor_keys():
     return '', 204  # No Content response
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5143, debug=True, threaded=True)
+    serve(app, host='0.0.0.0', port=5143)  # Use Waitress to serve the app
